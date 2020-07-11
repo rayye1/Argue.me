@@ -1,0 +1,26 @@
+.outsideContainer {
+    text-align: center;
+}
+
+.role-selection {
+    margin-left: 5%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    width: 50%;
+    padding: auto;
+  }
+  
+  table {
+    margin: 2% auto auto auto;
+  }
+  
+  th {
+    padding: auto;
+    text-align: center;
+  }
+  td {
+  }
