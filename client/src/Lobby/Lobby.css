@@ -1,3 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Galada');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+body {
+  background-color: #2D283E; 
+}
+
+.heading {
+  font-family: Galada, sans-serif;
+  font-size: 80px;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  color:#802BB1;
+}
+
+.newRoom {
+  font-family: Abel, sans-serif;
+  font-size: 25px;
+  padding: 1%;
+  border: solid 1px #564F6F;
+  width:  15vw;
+  background-color: white;
+  color: BLACK;
+}
+
+.newRoom:hover {
+  border: solid 1px #802BB1;
+  background-color: black;
+  color: white;
+}
+
 .outsideContainer {
     text-align: center;
 }
@@ -7,11 +38,12 @@
 }
 
 table, th, td {
-    border: 1px solid black;
+    font-family: Abel, sans-serif;
     border-collapse: collapse;
     text-align: center;
     width: 50%;
     padding: auto;
+    background-color: white;
   }
   
   table {
@@ -21,6 +53,28 @@ table, th, td {
   th {
     padding: auto;
     text-align: center;
+    width: 90vw;
   }
   td {
+    height: 20px;
+  }
+
+  .join-room {
+    width: 100%;
+    height: 100%;
+  }
+
+  .join-room:hover {
+    background-color: black;
+    color: white;
+  }
+
+  tbody {
+    padding: 500px;
+  }
+
+  .scrollit {
+    overflow-y:scroll;
+    height: 300px;
+    width: 90vw;
   }

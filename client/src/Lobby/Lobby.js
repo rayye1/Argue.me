@@ -1,6 +1,7 @@
 import React from 'react';
 
 import RoomModal from './roomModal/RoomModal'
+import {Link} from 'react-router-dom'
 
 import './Lobby.css'
 
@@ -23,23 +24,18 @@ class Lobby extends React.Component {
         this.setState({ show: false });
     }
 
-    addRoom(topic, host, numDebaters) {
+    addRoom(topic, numDebaters) {
         this.setState(prevState => ({
-            room : [...prevState.room, { topic, host, numDebaters }]
+            room : [...prevState.room, { topic, numDebaters }]
         }));
     }
 
     render () {
         return (
             <div className="outsideContainer">
-                <h1>Argue.Me</h1>
+                <h1 className="heading">Argue.Me</h1>
                 <div className="topSection">
-                    <button onClick={this.showModal}>New Room</button>
-                    <select className="role-selection">
-                        <option>Debater</option>
-                        <option>Judge</option>
-                        <option>Spectator</option>
-                    </select>
+                    <button onClick={this.showModal} className="newRoom">New Room</button>
                     <RoomModal show={this.state.show} handleClose={this.hideModal} addRoom={this.addRoom} />
                     <table className="myTable">
                         <thead>
@@ -49,16 +45,24 @@ class Lobby extends React.Component {
                             <th>Join Room</th>
                         </thead>
                         <tbody>
-                            {this.state.room.map((room) => {
-                                return (
-                                    <tr>
-                                        <td>{room.topic}</td>
-                                        <td>{room.host}</td>
-                                        <td>{room.numDebaters}</td>
-                                        <button>Join Room</button>
-                                    </tr>
-                                );
-                            })}
+                            <tr>
+                                <td colspan="4">
+                                <div className="scrollit">
+                                    {this.state.room.map((room) => {
+                                        return (
+                                                <tr>
+                                                    <td style={{width: '22vw'}}>{room.topic}</td>
+                                                    <td style={{width: '22vw'}}>Temp Host</td>
+                                                    <td style={{width: '22vw'}}>{room.numDebaters}</td>
+                                                    <Link to={`/chat?room=${room.topic}`/*Dummy Link*/}> 
+                                                        <button className="join-room" style={{width: '22vw'}}>JOIN</button>
+                                                    </Link>
+                                                </tr>
+                                        );
+                                    })}
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

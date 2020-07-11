@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
 .modal {
+    font-family: Abel, sans-serif;
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -44,16 +47,10 @@
 }
 
 .inputBox {
-      margin-top: 2%;
+      margin-top: 1%;
 }
 
 .num-people {
     margin-top: 2%;
     width: 67%;
-}
-
-.radio-buttons label{
-    margin-top: 2%;
-    margin-right: 5%;
-    margin-left: 5%;
 }
